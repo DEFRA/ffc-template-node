@@ -7,16 +7,18 @@ Template to support rapid delivery of microservices for FFC Platform. It contain
 Create a new repository from this template then edit the following to work with the name of your new repository:
 
 * `package.json`: update `name`, `description`, `homepage`
-* `docker-compose.yaml`: update the service name and `image`
-* `docker-compose.test.yaml`: update the service name and `image`
-* `docker-compose.override.yaml`: update the service name and `image`
+* `docker-compose.yaml`: update the service name, `image` and `container_name`
+* `docker-compose.test.yaml`: update the service name, `image` and `container_name`
+* `docker-compose.override.yaml`: update the service name, `image` and `container_name`
 * Rename `helm/ffc-template-node`
 * `helm/ffc-template-node/Chart.yaml`: update `description` and `name`
 * `helm/ffc-template-node/values.yaml`: update  `name`, `namespace`, `workstream`, `image`, `containerConfigMap.name`
 * `helm/ffc-template-node/templates/_container.yaml`: update the template name
 * `helm/ffc-template-node/templates/cluster-ip-service.yaml`: update the template name and list parameter of include
 * `helm/ffc-template-node/templates/config-map.yaml`: update the template name and list parameter of include
-* `helm/ffc-template-node/templates/deployment.yaml`: update the template name,  list parameter of deployment and container includes
+* `helm/ffc-template-node/templates/deployment.yaml`: update the template name, list parameter of deployment and container includes
+
+The Helm chart deployment values in `helm/ffc-template-node/values.yaml` may need updating depending on the resource needs of your microservice.
 
 ## Licence
 
