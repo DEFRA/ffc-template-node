@@ -6,4 +6,5 @@ services:
       context: .
       target: production
     image: ffc-template-node
+    container_name: ffc-template-node
     environment: {}

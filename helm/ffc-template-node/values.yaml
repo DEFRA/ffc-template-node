@@ -11,17 +11,17 @@ containerConfigMap:
 
 deployment:
   restartPolicy: Always
-  priorityClassName: low
+  priorityClassName: default
   replicas: 1
-  minReadySeconds: 5
+  minReadySeconds: 0
   redeployOnChange: update this field to force a change
   runAsNonRoot: true
   runAsUser: 1000
 
 container:
   imagePullPolicy: IfNotPresent
-  requestMemory: 60Mi
-  requestCpu: 60m
+  requestMemory: 120Mi
+  requestCpu: 120m
   limitMemory: 120Mi
   limitCpu: 120m
   readOnlyRootFilesystem: true

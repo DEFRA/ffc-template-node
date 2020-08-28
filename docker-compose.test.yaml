@@ -8,6 +8,7 @@ services:
     build:
       target: development
     image: ffc-template-node-development
+    container_name: ffc-template-node-test
     command: npm run test
     volumes:
       - ./test-output/:/home/node/test-output/
