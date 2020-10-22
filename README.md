@@ -17,6 +17,7 @@ Create a new repository from this template then edit the following to work with 
 * `helm/ffc-template-node/templates/cluster-ip-service.yaml`: update the template name and list parameter of include
 * `helm/ffc-template-node/templates/config-map.yaml`: update the template name and list parameter of include
 * `helm/ffc-template-node/templates/deployment.yaml`: update the template name, list parameter of deployment and container includes
+* `scripts/test`: update `project` and `service`
 
 The Helm chart deployment values in `helm/ffc-template-node/values.yaml` may need updating depending on the resource needs of your microservice.
 
