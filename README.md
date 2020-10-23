@@ -4,7 +4,12 @@ Template to support rapid delivery of microservices for FFC Platform. It contain
 
 ## Usage
 
-Create a new repository from this template then edit the following to work with the name of your new repository:
+Create a new repository from this template and run `./rename.js` specifying the new name of the project and the description to use e.g.
+```
+./rename.js ffc-demo-web "Web frontend for demo workstream"
+```
+
+The script will update the following:
 
 * `package.json`: update `name`, `description`, `homepage`
 * `docker-compose.yaml`: update the service name, `image` and `container_name`
@@ -18,7 +23,13 @@ Create a new repository from this template then edit the following to work with 
 * `helm/ffc-template-node/templates/config-map.yaml`: update the template name and list parameter of include
 * `helm/ffc-template-node/templates/deployment.yaml`: update the template name, list parameter of deployment and container includes
 
-The Helm chart deployment values in `helm/ffc-template-node/values.yaml` may need updating depending on the resource needs of your microservice.
+### Notes on automated rename
+
+* The Helm chart deployment values in `helm/ffc-template-node/values.yaml` may need updating depending on the resource needs of your microservice
+* The rename is a one-way operation i.e. currently it doesn't allow the name being changed from to be specified
+* There is some validation on the input to try and ensure the rename is successful, however, it is unlikely to stand up to malicious entry
+* Once the rename has been performed the script can be removed from the repo
+* Should the rename go awry the changes can be reverted via `git clean -df && git checkout -- .`
 
 ## Licence
 
