@@ -79,26 +79,26 @@ async function updateProjectName (projectName) {
   const filesToUpdate = [...rootFiles, ...helmFiles]
   const namespace = getNamespace(projectName)
 
-  filesToUpdate.forEach(async (file) => {
+  await Promise.all(filesToUpdate.map(async (file) => {
     console.log(`Updating '${file}' with projectName...`)
     const content = await fs.promises.readFile(file, 'utf8')
     const projectNameRegex = new RegExp(originalProjectName, 'g')
     const namespaceRegex = new RegExp(originalNamespace, 'g')
     const updatedContent = content.replace(projectNameRegex, projectName).replace(namespaceRegex, namespace)
-    await fs.promises.writeFile(file, updatedContent)
-  })
+    return fs.promises.writeFile(file, updatedContent)
+  }))
 }
 
 async function updateProjectDescription (description) {
   const helmDir = await getHelmDir()
   const filesToUpdate = ['package.json', `${helmDir}/Chart.yaml`]
 
-  filesToUpdate.forEach(async (file) => {
+  await Promise.all(filesToUpdate.map(async (file) => {
     console.log(`Updating '${file}' with description...`)
     const content = await fs.promises.readFile(file, 'utf8')
     const updatedContent = content.replace(originalDescription, description)
-    await fs.promises.writeFile(file, updatedContent)
-  })
+    return fs.promises.writeFile(file, updatedContent)
+  }))
 }
 
 async function rename () {
