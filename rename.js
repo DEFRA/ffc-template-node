@@ -3,9 +3,9 @@
 const fs = require('fs')
 const readline = require('readline')
 
-const originalProjectName = 'ffc-template-node'
-const originalNamespace = 'ffc-demo'
 const originalDescription = 'description-of-project-goes-here'
+const originalNamespace = 'ffc-demo'
+const originalProjectName = 'ffc-template-node'
 
 function processInput (args) {
   const [, , projectName, description] = args
@@ -52,14 +52,13 @@ async function getHelmFiles () {
   const templateFiles = ['templates/_container.yaml', 'templates/cluster-ip-service.yaml', 'templates/config-map.yaml', 'templates/deployment.yaml']
   const files = [...baseFiles, ...templateFiles]
 
-  const helmFiles = files.map((file) => {
+  return files.map((file) => {
     return `${helmDir}/${file}`
   })
-  return helmFiles
 }
 
 function getRootFiles () {
-  return ['package.json', 'package-lock.json', 'docker-compose.yaml', 'docker-compose.test.yaml', 'docker-compose.override.yaml']
+  return ['docker-compose.yaml', 'docker-compose.override.yaml', 'docker-compose.test.yaml', 'package.json', 'package-lock.json']
 }
 
 function getNamespace (projectName) {
@@ -79,33 +78,36 @@ async function updateProjectName (projectName) {
   const filesToUpdate = [...rootFiles, ...helmFiles]
   const namespace = getNamespace(projectName)
 
+  console.log(`Updating projectName from '${originalProjectName}', to '${projectName}'. In...`)
   await Promise.all(filesToUpdate.map(async (file) => {
-    console.log(`Updating '${file}' with projectName...`)
+    console.log(file)
     const content = await fs.promises.readFile(file, 'utf8')
     const projectNameRegex = new RegExp(originalProjectName, 'g')
     const namespaceRegex = new RegExp(originalNamespace, 'g')
     const updatedContent = content.replace(projectNameRegex, projectName).replace(namespaceRegex, namespace)
     return fs.promises.writeFile(file, updatedContent)
   }))
+  console.log('Completed projectName update.')
 }
 
 async function updateProjectDescription (description) {
   const helmDir = await getHelmDir()
   const filesToUpdate = ['package.json', `${helmDir}/Chart.yaml`]
 
+  console.log(`Updating description from '${originalDescription}', to '${description}'. In...`)
   await Promise.all(filesToUpdate.map(async (file) => {
-    console.log(`Updating '${file}' with description...`)
+    console.log(file)
     const content = await fs.promises.readFile(file, 'utf8')
     const updatedContent = content.replace(originalDescription, description)
     return fs.promises.writeFile(file, updatedContent)
   }))
+  console.log('Completed description update.')
 }
 
 async function rename () {
   const { description, projectName } = processInput(process.argv)
   const rename = await confirmRename(projectName, description)
   if (rename) {
-    console.log(`Project will be renamed to '${projectName}'.`)
     await renameDirs(projectName)
     await updateProjectName(projectName)
     await updateProjectDescription(description)
