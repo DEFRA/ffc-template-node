@@ -1,7 +1,7 @@
 {
   "name": "ffc-template-node",
   "version": "1.0.0",
-  "description": "Base Hapi Node microservice template",
+  "description": "description-of-project-goes-here",
   "homepage": "https://github.com/DEFRA/ffc-template-node",
   "main": "app/index.js",
   "scripts": {

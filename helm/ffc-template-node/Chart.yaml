@@ -1,5 +1,5 @@
 apiVersion: v2
-description: A Helm chart to deploy the FFC Template Node sample application to Kubernetes
+description: description-of-project-goes-here
 name: ffc-template-node
 # this version is automatically updated in the build pipline
 version: 1.0.0
