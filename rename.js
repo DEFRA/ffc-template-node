@@ -45,7 +45,7 @@ async function getHelmDir () {
 }
 
 function getScriptDir () {
-  return './scripts/'
+  return './scripts'
 }
 
 async function getHelmFiles () {
