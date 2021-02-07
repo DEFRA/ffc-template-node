@@ -6,6 +6,7 @@
   "main": "app/index.js",
   "scripts": {
     "test": "jest --runInBand",
+    "test:watch": "jest --coverage=false --onlyChanged --watch --runInBand",
     "start:watch": "nodemon --inspect=0.0.0.0 --ext js --legacy-watch app/index.js"
   },
   "author": "Defra",

@@ -44,6 +44,10 @@ async function getHelmDir () {
   return `./helm/${projectName}`
 }
 
+function getScriptDir () {
+  return './scripts/'
+}
+
 async function getHelmFiles () {
   // assuming the only dir in ./helm is the project name.
   // getting the name here removes dependency on it being updated.
@@ -58,7 +62,15 @@ async function getHelmFiles () {
 }
 
 function getRootFiles () {
-  return ['docker-compose.yaml', 'docker-compose.override.yaml', 'docker-compose.test.yaml', 'package.json', 'package-lock.json']
+  return ['docker-compose.yaml', 'docker-compose.override.yaml', 'docker-compose.test.yaml', 'docker-compose.test.watch.yaml', 'package.json', 'package-lock.json']
+}
+
+function getScriptFiles () {
+  const scriptDir = getScriptDir()
+  const files = ['test']
+  return files.map((file) => {
+    return `${scriptDir}/${file}`
+  })
 }
 
 function getNamespace (projectName) {
@@ -75,7 +87,8 @@ async function renameDirs (projectName) {
 async function updateProjectName (projectName) {
   const rootFiles = getRootFiles()
   const helmFiles = await getHelmFiles()
-  const filesToUpdate = [...rootFiles, ...helmFiles]
+  const scriptFiles = await getScriptFiles()
+  const filesToUpdate = [...rootFiles, ...helmFiles, ...scriptFiles]
   const namespace = getNamespace(projectName)
 
   console.log(`Updating projectName from '${originalProjectName}', to '${projectName}'. In...`)
