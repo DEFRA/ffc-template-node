@@ -11,4 +11,9 @@ services:
     container_name: ffc-template-node-test
     command: npm run test
     volumes:
+      - ./app/:/home/node/app/
+      - ./test/:/home/node/test/
       - ./test-output/:/home/node/test-output/
+      - ./jest.config.js:/home/node/jest.config.js
+      - ./jest.setup.js:/home/node/jest.setup.js
+      - ./package.json:/home/node/package.json
