@@ -1,6 +1,6 @@
 {
   "name": "ffc-template-node",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "description-of-project-goes-here",
   "homepage": "https://github.com/DEFRA/ffc-template-node",
   "main": "app/index.js",
