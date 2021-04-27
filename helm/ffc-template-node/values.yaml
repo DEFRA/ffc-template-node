@@ -14,18 +14,13 @@ deployment:
   priorityClassName: default
   replicas: 1
   minReadySeconds: 0
-  redeployOnChange: update this field to force a change
-  runAsNonRoot: true
-  runAsUser: 1000
 
 container:
   imagePullPolicy: IfNotPresent
-  requestMemory: 120Mi
-  requestCpu: 120m
-  limitMemory: 120Mi
-  limitCpu: 120m
-  readOnlyRootFilesystem: true
-  allowPrivilegeEscalation: false
+  requestMemory: 10Mi
+  requestCpu: 10m
+  limitMemory: 40Mi
+  limitCpu: 40m
   port: 3000
 
 livenessProbe:
