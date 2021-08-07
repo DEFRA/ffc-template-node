@@ -5,21 +5,25 @@
   "homepage": "https://github.com/DEFRA/ffc-template-node",
   "main": "app/index.js",
   "scripts": {
-    "test": "jest --runInBand",
+    "pretest": "npm run test:lint",
+    "test": "jest --runInBand --forceExit",
     "test:watch": "jest --coverage=false --onlyChanged --watch --runInBand",
-    "start:watch": "nodemon --inspect=0.0.0.0 --ext js --legacy-watch app/index.js"
+    "test:lint": "standard",
+    "test:debug": "node --inspect-brk=0.0.0.0 ./node_modules/jest/bin/jest.js",
+    "start:watch": "nodemon --inspect=0.0.0.0 --ext js --legacy-watch app/index.js",
+    "start:debug": "nodemon --inspect-brk=0.0.0.0 --ext js --legacy-watch app/index.js"
   },
   "author": "Defra",
   "contributors": [],
   "license": "OGL-UK-3.0",
   "dependencies": {
-    "@hapi/hapi": "^20.0.0"
+    "@hapi/hapi": "^20.1.5"
   },
   "devDependencies": {
-    "jest": "^26.4.0",
-    "jest-junit": "^11.1.0",
-    "nodemon": "^2.0.4",
-    "standard": "^14.3.4"
+    "jest": "^27.0.6",
+    "jest-junit": "^12.2.0",
+    "nodemon": "^2.0.12",
+    "standard": "^16.0.3"
   },
   "standard": {
     "globals": [
