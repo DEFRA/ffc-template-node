@@ -6,8 +6,15 @@ image: ffc-template-node
 
 labels: {}
 
+appInsights:
+  key:
+
 containerConfigMap:
   name: ffc-template-node-config-map
+
+containerSecret:
+  name: ffc-template-node-container-secret
+  type: Opaque
 
 deployment:
   restartPolicy: Always

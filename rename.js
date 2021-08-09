@@ -53,7 +53,7 @@ async function getHelmFiles () {
   // getting the name here removes dependency on it being updated.
   const helmDir = await getHelmDir()
   const baseFiles = ['Chart.yaml', 'values.yaml']
-  const templateFiles = ['templates/_container.yaml', 'templates/cluster-ip-service.yaml', 'templates/config-map.yaml', 'templates/deployment.yaml']
+  const templateFiles = ['templates/_container.yaml', 'templates/cluster-ip-service.yaml', 'templates/config-map.yaml', 'templates/container-secret.yaml', 'templates/deployment.yaml']
   const files = [...baseFiles, ...templateFiles]
 
   return files.map((file) => {
@@ -62,7 +62,7 @@ async function getHelmFiles () {
 }
 
 function getRootFiles () {
-  return ['docker-compose.yaml', 'docker-compose.override.yaml', 'docker-compose.test.yaml', 'docker-compose.test.watch.yaml', 'package.json', 'package-lock.json']
+  return ['docker-compose.yaml', 'docker-compose.override.yaml', 'docker-compose.debug.yaml', 'docker-compose.test.yaml', 'docker-compose.test.watch.yaml', 'docker-compose.test.debug.yaml', 'package.json', 'package-lock.json']
 }
 
 function getScriptFiles () {
