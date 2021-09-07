@@ -1,3 +1,4 @@
+require('./insights').setup()
 const Hapi = require('@hapi/hapi')
 
 const server = Hapi.server({

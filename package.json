@@ -17,7 +17,8 @@
   "contributors": [],
   "license": "OGL-UK-3.0",
   "dependencies": {
-    "@hapi/hapi": "^20.1.5"
+    "@hapi/hapi": "^20.1.5",
+    "applicationinsights": "^2.1.6"
   },
   "devDependencies": {
     "jest": "^27.0.6",
