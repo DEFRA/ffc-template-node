@@ -17,14 +17,14 @@
   "contributors": [],
   "license": "OGL-UK-3.0",
   "dependencies": {
-    "@hapi/hapi": "^20.1.5",
-    "applicationinsights": "^2.1.6"
+    "@hapi/hapi": "^20.2.1",
+    "applicationinsights": "^2.2.1"
   },
   "devDependencies": {
-    "jest": "^27.0.6",
-    "jest-junit": "^12.2.0",
-    "nodemon": "^2.0.12",
-    "standard": "^16.0.3"
+    "jest": "^27.5.1",
+    "jest-junit": "^13.0.0",
+    "nodemon": "^2.0.15",
+    "standard": "^16.0.4"
   },
   "standard": {
     "globals": [
