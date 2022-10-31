@@ -1,10 +1,11 @@
-environment: development
+environment: production
+environmentCode:
 name: ffc-template-node
 namespace: ffc-demo
-workstream: ffc-demo
 image: ffc-template-node
 
-labels: {}
+labels:
+  component: service
 
 appInsights:
   key:
@@ -16,18 +17,13 @@ containerSecret:
   name: ffc-template-node-container-secret
   type: Opaque
 
-deployment:
-  restartPolicy: Always
-  priorityClassName: default
-  replicas: 1
-  minReadySeconds: 0
+deployment: {}
 
 container:
-  imagePullPolicy: IfNotPresent
-  requestMemory: 10Mi
-  requestCpu: 10m
-  limitMemory: 40Mi
-  limitCpu: 40m
+  requestMemory: 100Mi
+  requestCpu: 100m
+  limitMemory: 100Mi
+  limitCpu: 100m
   port: 3000
 
 livenessProbe:
