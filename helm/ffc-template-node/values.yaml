@@ -1,7 +1,11 @@
 environment: production
+# set to snd, dev, test, train, pre and prod in each environment.
+# supports flexible Helm chart values reducing the dependency on Azure App Configuration
 environmentCode:
 name: ffc-template-node
 namespace: ffc-demo
+# required to support correct mapping of helm values with Azure App Configuration
+workstream: ffc-demo
 image: ffc-template-node
 
 labels:
