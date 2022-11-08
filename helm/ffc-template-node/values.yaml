@@ -2,6 +2,7 @@ environment: production
 environmentCode:
 name: ffc-template-node
 namespace: ffc-demo
+workstream: ffc-demo
 image: ffc-template-node
 
 labels:
