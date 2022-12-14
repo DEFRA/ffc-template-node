@@ -30,13 +30,15 @@ container:
 livenessProbe:
   path: /healthz
   port: 3000
-  initialDelaySeconds: 10
+  initialDelaySeconds: 20
   periodSeconds: 10
   failureThreshold: 3
+  timeoutSeconds: 5
 
 readinessProbe:
   path: /healthy
   port: 3000
-  initialDelaySeconds: 10
+  initialDelaySeconds: 30
   periodSeconds: 10
   failureThreshold: 3
+  timeoutSeconds: 5
