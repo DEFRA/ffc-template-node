@@ -7,4 +7,4 @@ services:
     container_name: ffc-template-node
     environment:
       APPINSIGHTS_CLOUDROLE: ffc-template-node-local
-      APPINSIGHTS_INSTRUMENTATIONKEY: ${APPINSIGHTS_INSTRUMENTATIONKEY}
+      APPINSIGHTS_CONNECTIONSTRING: ${APPINSIGHTS_CONNECTIONSTRING}

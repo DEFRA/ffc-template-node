@@ -9,7 +9,7 @@ labels:
   component: service
 
 appInsights:
-  key:
+  connectionString:
 
 containerConfigMap:
   name: ffc-template-node-config-map
