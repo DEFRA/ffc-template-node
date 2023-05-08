@@ -64,7 +64,7 @@ compose() {
   if [ "${debug}" = "true" ]; then
     compose run --service-ports ${service} ${command}
   else
-    compose run ${service} ${command}
+    compose run --rm ${service} ${command}
   fi
 
   # Clean up
