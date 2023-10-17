@@ -38,12 +38,12 @@ resources:
 extends:
   template: /pipelines/common-app-build.yaml@DEFRA-ADPPipelineCommon
   parameters:
-    projectName: "FFCDemoClaimService"
+    projectName: "FFCTemplateNode"
     deployFromFeature: ${{ parameters.deployFromFeature }}
     appBuildConfig:
       appFrameworkType: "nodejs"    
       projectPath: "./package.json"
       manifestPath: "./package.json"
-      imageRepoName: "ffc-demo-claim-service"
+      imageRepoName: "ffc-template-node"
     appTestConfig:
       testFilePath: "./docker-compose.test.yaml"
