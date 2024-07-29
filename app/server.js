@@ -1,15 +1,30 @@
-require('./insights').setup()
-const Hapi = require('@hapi/hapi')
+import Hapi from '@hapi/hapi'
+import HapiPino from 'hapi-pino'
+import Joi from 'joi'
+import healthy from './routes/healthy.js'
+import healthz from './routes/healthz.js'
 
-const server = Hapi.server({
-  port: process.env.PORT
-})
+const createServer = () => {
+  const server = Hapi.server({
+    port: process.env.PORT
+  })
 
-const routes = [].concat(
-  require('./routes/healthy'),
-  require('./routes/healthz')
-)
+  const routes = [].concat(
+    healthy,
+    healthz
+  )
 
-server.route(routes)
+  server.validator(Joi)
+  server.route(routes)
+  server.register({
+    plugin: HapiPino,
+    options: {
+      logPayload: true,
+      level: 'warn'
+    }
+  })
 
-module.exports = server
+  return server
+}
+
+export { createServer }
