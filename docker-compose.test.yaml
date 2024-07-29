@@ -14,3 +14,5 @@ services:
       - ./test-output:/home/node/test-output
       - ./jest.config.js:/home/node/jest.config.js
       - ./package.json:/home/node/package.json
+    environment:
+      NODE_OPTIONS: "$NODE_OPTIONS --experimental-vm-modules"

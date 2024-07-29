@@ -4,7 +4,7 @@ describe('healthz test', () => {
   let server
 
   beforeEach(async () => {
-    const server = await createServer()
+    server = await createServer()
     await server.initialize()
   })
 
