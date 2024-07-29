@@ -87,7 +87,7 @@ async function renameDirs (projectName) {
 async function updateProjectName (projectName) {
   const rootFiles = getRootFiles()
   const helmFiles = await getHelmFiles()
-  const scriptFiles = await getScriptFiles()
+  const scriptFiles = getScriptFiles()
   const filesToUpdate = [...rootFiles, ...helmFiles, ...scriptFiles]
   const namespace = getNamespace(projectName)
 
