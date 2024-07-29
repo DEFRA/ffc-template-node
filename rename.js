@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const fs = require('fs')
-const readline = require('readline')
+import fs from 'fs'
+import readline from 'readline'
 
 const originalDescription = 'description-of-project-goes-here'
 const originalNamespace = 'ffc-demo'
@@ -16,7 +16,7 @@ function processInput (args) {
   if (args.length !== 4 || !projectName || projectName.split('-').length < 3 || !description) {
     const errMsg = [
       'Please enter a new name and description for the project.',
-      'The name must contain two hypens and be of the form "<program>-<worksream>-<repo>" e.g. "ffc-demo-web".',
+      'The name must contain two hyphens and be of the form "<program>-<workstream>-<repo>" e.g. "ffc-demo-web".',
       'The description must not be empty and be wrapped in quotes e.g. "excellent new description".'
     ]
     console.error(errMsg.join('\n'))
