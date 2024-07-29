@@ -4,6 +4,7 @@
   "description": "description-of-project-goes-here",
   "homepage": "https://github.com/DEFRA/ffc-template-node",
   "main": "app/index.js",
+  "type": "module",
   "scripts": {
     "pretest": "npm run test:lint",
     "test": "jest --runInBand --forceExit",
