@@ -4,6 +4,7 @@
   "description": "description-of-project-goes-here",
   "homepage": "https://github.com/DEFRA/ffc-template-node",
   "main": "app/index.js",
+  "type": "module",
   "scripts": {
     "pretest": "npm run test:lint",
     "test": "jest --runInBand --forceExit",
@@ -18,7 +19,10 @@
   "license": "OGL-UK-3.0",
   "dependencies": {
     "@hapi/hapi": "21.3.2",
-    "applicationinsights": "2.9.1"
+    "applicationinsights": "2.9.1",
+    "hapi-pino": "12.1.0",
+    "joi": "17.13.3",
+    "log-timestamp": "0.3.0"
   },
   "devDependencies": {
     "jest": "29.7.0",

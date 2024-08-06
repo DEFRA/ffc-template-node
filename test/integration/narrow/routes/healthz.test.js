@@ -1,8 +1,11 @@
-describe('Healthz test', () => {
-  const server = require('../../../../app/server')
+import { createServer } from '../../../../app/server.js'
+
+describe('healthz test', () => {
+  let server
 
   beforeEach(async () => {
-    await server.start()
+    server = await createServer()
+    await server.initialize()
   })
 
   test('GET /healthz route returns 200', async () => {

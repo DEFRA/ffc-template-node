@@ -1,4 +1,4 @@
-module.exports = {
+const config = {
   collectCoverage: true,
   collectCoverageFrom: [
     '**/*.js',
@@ -32,5 +32,8 @@ module.exports = {
   ],
   testEnvironment: 'node',
   testPathIgnorePatterns: [],
-  verbose: true
+  verbose: true,
+  transform: {}
 }
+
+export default config
