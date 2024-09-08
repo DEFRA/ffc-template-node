@@ -5,26 +5,17 @@ namespace: ffc-demo
 workstream: ffc-demo
 image: ffc-template-node
 
-labels:
-  component: service
-
 appInsights:
   connectionString:
 
-containerConfigMap:
-  name: ffc-template-node-config-map
+containerConfigMap: {}
 
-containerSecret:
-  name: ffc-template-node-container-secret
-  type: Opaque
+containerSecret: {}
 
 deployment: {}
 
 container:
-  requestMemory: 100Mi
-  requestCpu: 100m
-  limitMemory: 100Mi
-  limitCpu: 100m
+  resourceTier: M
   port: 3000
 
 livenessProbe:
