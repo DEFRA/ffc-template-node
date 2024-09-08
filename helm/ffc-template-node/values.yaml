@@ -8,6 +8,8 @@ image: ffc-template-node
 appInsights:
   connectionString:
 
+labels: {}
+
 containerConfigMap: {}
 
 containerSecret: {}
