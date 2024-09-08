@@ -13,3 +13,8 @@ services:
     volumes:
       - ./app:/home/node/app
       - ./package.json:/home/node/package.json
+
+networks:
+  ffc-template-node:
+    name: ffc-template-node
+    driver: bridge
