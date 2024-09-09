@@ -4,7 +4,7 @@ import Joi from 'joi'
 import healthy from './routes/healthy.js'
 import healthz from './routes/healthz.js'
 
-const createServer = () => {
+const createServer = async () => {
   const server = Hapi.server({
     port: process.env.PORT
   })
@@ -16,7 +16,7 @@ const createServer = () => {
 
   server.validator(Joi)
   server.route(routes)
-  server.register({
+  await server.register({
     plugin: HapiPino,
     options: {
       logPayload: true,
