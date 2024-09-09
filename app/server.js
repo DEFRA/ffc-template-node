@@ -6,7 +6,17 @@ import healthz from './routes/healthz.js'
 
 const createServer = async () => {
   const server = Hapi.server({
-    port: process.env.PORT
+    port: process.env.PORT,
+    routes: {
+      validate: {
+        options: {
+          abortEarly: false
+        }
+      }
+    },
+    router: {
+      stripTrailingSlash: true
+    }
   })
 
   const routes = [].concat(
