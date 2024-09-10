@@ -17,13 +17,15 @@ containerSecret: {}
 
 deployment: {}
 
+port: &port 3000
+
 container:
   resourceTier: M
-  port: 3000
+  port: *port
 
 livenessProbe:
   path: /healthz
-  port: 3000
+  port: *port
   initialDelaySeconds: 20
   periodSeconds: 10
   failureThreshold: 3
@@ -31,7 +33,7 @@ livenessProbe:
 
 readinessProbe:
   path: /healthy
-  port: 3000
+  port: *port
   initialDelaySeconds: 30
   periodSeconds: 10
   failureThreshold: 3
