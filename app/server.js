@@ -1,12 +1,12 @@
 import Hapi from '@hapi/hapi'
-import HapiPino from 'hapi-pino'
 import Joi from 'joi'
-import healthy from './routes/healthy.js'
-import healthz from './routes/healthz.js'
+import { registerPlugins } from './plugins/index.js'
+import config from './config.js'
 
-const createServer = async () => {
+async function createServer () {
   const server = Hapi.server({
-    port: process.env.PORT,
+    host: config.get('host'),
+    port: config.get('port'),
     routes: {
       validate: {
         options: {
@@ -19,20 +19,8 @@ const createServer = async () => {
     }
   })
 
-  const routes = [].concat(
-    healthy,
-    healthz
-  )
-
   server.validator(Joi)
-  server.route(routes)
-  await server.register({
-    plugin: HapiPino,
-    options: {
-      logPayload: true,
-      level: 'warn'
-    }
-  })
+  await registerPlugins(server)
 
   return server
 }
