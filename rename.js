@@ -53,7 +53,7 @@ async function getHelmFiles () {
   // getting the name here removes dependency on it being updated.
   const helmDir = await getHelmDir()
   const baseFiles = ['Chart.yaml', 'values.yaml']
-  const templateFiles = ['templates/_container.yaml', 'templates/cluster-ip-service.yaml', 'templates/config-map.yaml', 'templates/container-secret.yaml', 'templates/deployment.yaml', 'templates/azure-identity-binding.yaml', 'templates/azure-identity.yaml']
+  const templateFiles = ['templates/_container.yaml', 'templates/cluster-ip-service.yaml', 'templates/config-map.yaml', 'templates/container-secret.yaml', 'templates/deployment.yaml', 'templates/service-account.yaml']
   const files = [...baseFiles, ...templateFiles]
 
   return files.map((file) => {
