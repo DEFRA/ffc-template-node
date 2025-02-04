@@ -121,7 +121,7 @@ More information about the pipeline : [FFC-Service-Deploy Pipeline](https://eafl
 
 ### Provisioning
 
-With filling `provision.azure` file with the correct information, the pipeline will create the require resorces automatically
+After updating the `provision.azure` file with the correct information, the pipeline will create the required resources automatically
 At the moment the following resources provisioning automatically:
 - Managed Identity
 - PostgreSql Database
