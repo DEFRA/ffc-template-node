@@ -129,7 +129,7 @@ At the moment the following resources provisioning automatically:
 - Service Bus Topic
 - Service Bus Subscription
 
-The permission to the mension resources will automatically grant by the pipeline.
+The permissions to the mentioned resources will be automatically granted by the pipeline.
 
 ### Using Workload Identity
 
