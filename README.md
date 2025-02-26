@@ -61,7 +61,7 @@ through the Docker Compose
 
 ```
 # Build container images
-docker-compose build
+docker compose build
 ```
 
 ### Start
@@ -69,7 +69,7 @@ docker-compose build
 Use Docker Compose to run service locally.
 
 ```
-docker-compose up
+docker compose up
 ```
 
 ## Test structure
