@@ -18,7 +18,7 @@
   "contributors": [],
   "license": "OGL-UK-3.0",
   "dependencies": {
-    "@hapi/hapi": "21.3.2",
+    "@hapi/hapi": "21.3.12",
     "applicationinsights": "2.9.1",
     "convict": "6.2.4",
     "convict-format-with-validator": "6.2.0",
