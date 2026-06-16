@@ -2,11 +2,11 @@
 # to provide dependencies and expose ports for local testing
 
 services:
-  ffc-template-node:
+  fcp-pds-web:
     build:
       target: development
-    image: ffc-template-node-development
-    container_name: ffc-template-node-development
+    image: fcp-pds-web-development
+    container_name: fcp-pds-web-development
     ports:
       - "3000:3000"
       - "9229:9229"
@@ -14,9 +14,9 @@ services:
       - ./app:/home/node/app
       - ./package.json:/home/node/package.json
     networks:
-      - ffc-template-node
+      - fcp-pds-web
 
 networks:
-  ffc-template-node:
-    name: ffc-template-node
+  fcp-pds-web:
+    name: fcp-pds-web
     driver: bridge

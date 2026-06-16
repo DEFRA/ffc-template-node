@@ -1,10 +1,10 @@
 resources:
-  identity: ffc-template-node
+  identity: fcp-pds-web
   # postgreSql:
-  #   name: ffc-template-node
+  #   name: fcp-pds-web
   #   extensions:
   #     - name: uuid-ossp
   # queues:
-  #   - name: ffc-template-node
+  #   - name: fcp-pds-web
   #     role: receiver
 

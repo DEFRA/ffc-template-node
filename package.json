@@ -1,8 +1,8 @@
 {
-  "name": "ffc-template-node",
+  "name": "fcp-pds-web",
   "version": "0.1.0",
-  "description": "description-of-project-goes-here",
-  "homepage": "https://github.com/DEFRA/ffc-template-node",
+  "description": "Frontend for Payments and Documents Services",
+  "homepage": "https://github.com/DEFRA/fcp-pds-web",
   "main": "app/index.js",
   "type": "module",
   "scripts": {
@@ -24,7 +24,8 @@
     "convict": "6.2.5",
     "convict-format-with-validator": "6.2.0",
     "hapi-pino": "12.1.0",
-    "joi": "17.13.3",
+    "husky": "9.1.7",
+    "joi": "18.2.1",
     "log-timestamp": "0.3.0"
   },
   "devDependencies": {
@@ -33,6 +34,13 @@
     "jest-junit": "16.0.0",
     "neostandard": "0.13.0",
     "nodemon": "3.0.1"
+  },
+  "overrides": {
+    "protobufjs": "8.6.3",
+    "uuid": "11.1.1",
+    "joi": "18.2.1",
+    "js-yaml": "4.2.0",
+    "@opentelemetry/core": "2.8.0"
   },
   "nodemonConfig": {
     "ignore": [

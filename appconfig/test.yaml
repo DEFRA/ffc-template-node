@@ -1,1 +1,6 @@
----
+environment: production
+environmentCode: test
+ingress:
+  class: nginx
+  endpoint: ffc-pds-web-test
+  server: azure.defra.cloud

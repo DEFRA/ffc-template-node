@@ -1,1 +1,6 @@
----
+environment: production
+environmentCode: pre
+ingress:
+  class: nginx
+  endpoint: ffc-pds-web-pre
+  server: azure.defra.cloud

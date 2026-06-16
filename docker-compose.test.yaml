@@ -2,11 +2,11 @@
 # that test output is saved to the host
 
 services:
-  ffc-template-node:
+  fcp-pds-web:
     build:
       target: development
-    image: ffc-template-node-development
-    container_name: ffc-template-node-test
+    image: fcp-pds-web-development
+    container_name: fcp-pds-web-test
     command: npm run test
     volumes:
       - ./app:/home/node/app
@@ -16,3 +16,7 @@ services:
       - ./package.json:/home/node/package.json
     environment:
       NODE_OPTIONS: "$NODE_OPTIONS --experimental-vm-modules"
+networks:
+  docs:
+    name: docs
+    external: false

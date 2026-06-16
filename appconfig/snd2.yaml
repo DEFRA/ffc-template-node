@@ -1,1 +1,6 @@
----
+environment: production
+environmentCode: snd2
+ingress:
+  class: nginx
+  endpoint: ffc-pay-web-snd2
+  server: azure.defra.cloud
